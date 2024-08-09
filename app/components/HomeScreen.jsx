@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Button } from 'react-native'
 
-export const HomeScreen = () => {
+
+export const HomeScreen = ({ navigation }) => {
   return (
     <View>
       <Text>HomeScreen</Text>
+      <Button title='login' onPress={() => navigation.navigate('Login')} />
     </View>
   )
 }

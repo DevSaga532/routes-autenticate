@@ -1,11 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { createContext , useContext, useState } from "react";
 
- export const AuthContext = () => {
-  return (
-    <View>
-      <Text>AuthContext</Text>
-    </View>
-  )
-}
 
+export const AuthContext  = createContext();
+
+export const AuthProvider = ({ children }) => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+    const login = () => setIsAuthenticated(true);
+    const logout = () => setIsAuthenticated(false);
+  
+    return (
+      <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+        {children}
+      </AuthContext.Provider>
+    );
+  };
+  export const useAuth = () => useContext(AuthContext);
