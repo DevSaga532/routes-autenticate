@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen, ProfileScreen, SettingsScreen } from "../components";
+import { HomeScreen, ProfileScreen, SettingsScreen } from "../pages";
 import { LoginScreen, RegisterScreen } from "../auth";
 import { useAuth } from "../context";
 
